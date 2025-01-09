@@ -2,7 +2,7 @@ const express = require('express');
 const bcrypt = require("bcrypt");
 const {UserModel , TodoModel } = require('./db');
 const jwt = require("jsonwebtoken");
-JWT_SECRET = "asdasdlascas@asdfia";
+JWT_SECRET = "";
 const mongoose = require('mongoose');
 const app = express();
 app.use(express.json());
