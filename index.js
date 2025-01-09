@@ -6,7 +6,7 @@ JWT_SECRET = "asdasdlascas@asdfia";
 const mongoose = require('mongoose');
 const app = express();
 app.use(express.json());
-mongoose.connect("mongodb+srv://pseudonerd:ZtqOIzZzpDQAOvQV@cluster0.zqwec.mongodb.net/todo-bharath-2003")
+mongoose.connect("")
 .then(() => console.log("Connected to MongoDB"))
 .catch((err) => console.error("Error connecting to MongoDB:", err));
 
@@ -94,15 +94,14 @@ app.post("/todo",async function(req,res){
 });
 
 
-app.get("/todos", async function (req, res) {
+app.get("/todos",async function(req,res){
     const uid = req.userId;
     const todos = await TodoModel.find({
-        uid: uid // Use 'uid' to match the schema
+        uid
     });
     res.json({
         todos
-    });
+    })
 });
-
 
 app.listen(3000);
